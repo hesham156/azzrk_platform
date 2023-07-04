@@ -22,5 +22,35 @@
             "uZip":"94107",
             "uCountry":"US"
         }
+    ],
+    "stores":[
+        {
+            "id":1,
+            "sName":"Azzrk",
+            "sLogo":"https://azzrk.com/wp-content/uploads/2023/03/02-e1678609966788.png",
+            "sAddress":"1234 Main St",
+            "sCity":"San Francisco",
+            "sState":"CA",
+            "sZip":"94107",
+            "sCountry":"US",
+            "sPhone":"09000000000",
+            "sCreatedAt":"2021-01-01T00:00:00.000Z",
+            "sUpdatedAt":"2021-01-01T00:00:00.000Z",
+            "sOwner":2,
+            "sTeam":[1,2,3],
+            "sIdentities":["facebook","instagram"],
+            "sProducts":[1,2,3],
+            "sReviews":[1,2,3],
+            "sComments":[1,2,3],
+            "sOrders":[1,2,3],
+            "sReviewsCount":[1,2,3],
+            "sCommentsCount":[1,2,3],
+            "sOrdersCount":[1,2,3],
+            "sProductsCount":[1,2,3]
+            },
+
+
+        }
     ]
+
 }
