@@ -1,0 +1,26 @@
+{
+    "site":{
+        "siteName":"azzrk",
+        "siteLogo":"https://azzrk.com/wp-content/uploads/2023/03/02-e1678609966788.png",
+        "siteDomain":"azzrk.com"
+    },
+    "users":[
+        {
+            "id":1,
+            "uName":"hesham",
+            "uEmail":"nnheo@example.com",
+            "uPassword":"123456",
+            "uRole":"admin",
+            "uStatus":"active",
+            "uCreatedAt":"2021-01-01T00:00:00.000Z",
+            "uUpdatedAt":"2021-01-01T00:00:00.000Z",
+            "uAvatar":"https://azzrk.com/wp-content/uploads/2023/03/02-e1678609966788.png",
+            "uPhone":"09000000000",
+            "uAddress":"1234 Main St",
+            "uCity":"San Francisco",
+            "uState":"CA",
+            "uZip":"94107",
+            "uCountry":"US"
+        }
+    ]
+}
