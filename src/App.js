@@ -3,8 +3,7 @@ import Router from "./router/Router";
 import './asset/css/public.css'
 function App() {
   return (
-    <div className="app">
-      <Nave/>
+    <div dir="rtl" className="app">
       <Router/>
     </div>
   );

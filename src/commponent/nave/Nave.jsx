@@ -4,7 +4,9 @@ const Nave = () => {
   return (
     <div className={style.nave}>
         <div className="container">
-        Nave
+            <div className='logo'><img/></div>
+            <div className='menu'><ul></ul></div>
+            <div className='btns'><div></div></div>
         </div>
         
         </div>
