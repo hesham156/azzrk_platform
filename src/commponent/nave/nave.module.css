@@ -1,0 +1,11 @@
+.nave ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.nave ul li a {
+    text-decoration: none;
+}

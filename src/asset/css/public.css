@@ -1,8 +1,16 @@
 :root{
-    --primary-color:#0B2447;
-    --secendry-color:#A5D7E8;
+    --primary-color:#1a2232;
+    --secendry-color:#1da1f2;
 }
 .app{
     background-color: var(--primary-color);
     color: var(--secendry-color);
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
