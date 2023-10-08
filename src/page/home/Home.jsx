@@ -6,7 +6,7 @@ import Slides from '../../commponent/slider/Slides'
 import img from "../../asset/imgs/Homepage-Pic3.png"
 const Home = () => {
   return (
-    <>
+    <div>
           <Nave/>
 
     <div className={style.home}>
@@ -15,7 +15,7 @@ const Home = () => {
             <Slides data={[{img:img,title:"1",des:"2",btns:[{url:"3",text:"4"}]}]}/>
           </div>
     </div>
-    </>
+    </div>
   )
 }
 
