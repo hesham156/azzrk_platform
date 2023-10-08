@@ -7,8 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './asset/css/public.css'
-
+import 'aos/dist/aos.css'
+import Aos from 'aos';
 import {BrowserRouter as Router} from 'react-router-dom'
+Aos.init()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

@@ -3,7 +3,7 @@ import React from 'react'
 const Slide = ({slide}) => {
   return (
     <div className='slide'>
-        <img src={slide.img}/>
+        <img data-aos="fade-left"  src={slide.img}/>
         
     </div>
   )
