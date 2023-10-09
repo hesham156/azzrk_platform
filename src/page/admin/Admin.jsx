@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './admin.module.css'
 import AdminSideNave from '../../commponent/adminSideNave/AdminSideNave'
 import Home from '../home/Home'
 
 const Admin = () => {
+
   return (
     <div className={style.admin}>
-      <AdminSideNave/>
+      <AdminSideNave />
       <div className='adminHome' style={{width:"80%"}}>
-      <Home/>
+         <Home/>
       </div>
       {/* <iframe src="http://localhost:3000/" frameborder="0"></iframe> */}
      

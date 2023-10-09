@@ -8,3 +8,6 @@ iframe{
     display: inline-block;
     height: 100%;
 }
+.adminHome .logo{
+    background-color: red;
+}

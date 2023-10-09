@@ -1,5 +1,5 @@
 import {createStore} from "redux"
-import user from './reducers/user'
-const enhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-const store = createStore(user,enhancer())
+import element from "./reducers/element"
+// const enhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+const store = createStore(element)
  export default store

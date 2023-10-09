@@ -1,4 +1,4 @@
-export const ADDUSER = "ADDUSER";
-export const DELETUSER = "DELETUSER";
-export const ADDVAL = "ADDVAL";
-
+export const GLOBAL ="GLOBAL";
+export const LOGO ="LOGO";
+export const MENU ="MENU";
+export const BTNS ="BTNS";

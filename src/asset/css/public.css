@@ -14,3 +14,35 @@ ul{
     margin: 0;
     padding: 0;
 }
+.adminHome .logo,.adminHome .menu,.adminHome .btns{
+    position: relative;
+}
+.adminHome .logo:hover:before,.adminHome .menu:hover:before,.adminHome .btns:hover:before  {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/1160/1160758.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    left: 30%;
+    top: 50%;
+    transform: translate(50%,-50%);
+    cursor: pointer;
+}
+.adminHome .logo:hover,.adminHome .menu:hover,.adminHome .btns:hover{
+    cursor: pointer;
+}
+.adminHome .menu a,.adminHome .btns a{
+    pointer-events: none;
+
+}
+.edit{
+    width: 20%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+}
