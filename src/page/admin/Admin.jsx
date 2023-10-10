@@ -10,9 +10,7 @@ const Admin = () => {
       <AdminSideNave />
       <div className='adminHome' style={{width:"80%"}}>
          <Home/>
-      </div>
-      {/* <iframe src="http://localhost:3000/" frameborder="0"></iframe> */}
-     
+      </div>     
     </div>
   )
 }

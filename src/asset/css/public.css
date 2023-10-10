@@ -44,5 +44,9 @@ ul{
     height: 100vh;
     background: white;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+}
+.logoImg{
+    max-width: 100%;
+    min-width: 1%;
 }

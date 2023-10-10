@@ -1,19 +1,24 @@
 import React from 'react'
 import style from './home.module.css'
 import Nave from '../../commponent/nave/Nave'
-import { Link } from 'react-router-dom'
-import Slides from '../../commponent/slider/Slides'
-import img from "../../asset/imgs/Homepage-Pic3.png"
+import {Route, Routes } from 'react-router-dom'
+import { Login } from '@mui/icons-material'
+import Singup from '../singup/Singup'
+import Employee from '../employee/Employee'
+import Customer from '../customer/Customer'
 const Home = () => {
 
   return (
-    <div>
+    <div className={style.pages}>
           <Nave/>
-         <div  className={style.home}>
-           <div className='container'>
-            <Link to="/" >home</Link>
-            <Slides data={[{img:img,title:"1",des:"2",btns:[{url:"3",text:"4"}]}]}/>
-          </div>
+         <div  className={style.page}>
+           <Routes>
+              <Route path='/login' element={<Login/>}/>
+              <Route path='/singup' element={<Singup/>}/>
+              <Route path='/employee' element={<Employee/>}/>
+              <Route path='/customer' element={<Customer/>}/>
+          </Routes>
+    
     </div>
     </div>
   )

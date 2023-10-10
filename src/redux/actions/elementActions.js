@@ -1,7 +1,7 @@
 import { BTNS, GLOBAL, LOGO, MENU } from "./types"
 
-export const logo =(dispatch,elm)=>{
-    return dispatch({type:LOGO,payload:elm})
+export const logo =(dispatch,elm,logo,width)=>{
+    return dispatch({type:LOGO,payload:{elm:elm,logo:logo,logoWidth:width}})
 
 }
 export const menu =(dispatch,elm)=>{
