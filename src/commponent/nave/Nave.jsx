@@ -2,17 +2,22 @@ import React from 'react'
 import style from './nave.module.css'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { btns, logo, menu } from '../../redux/actions/elementActions'
+import { clogo, ctype } from '../../redux/elementSlice'
 const Nave = () => {
-  const element = useSelector(state=>state)
+  const {img,logoWidth} = useSelector(state=>state.element.logo)
+  const menIitems = useSelector((state=>state.element.menu.lnk))
   const dispatch = useDispatch()
- console.log(element)
-  return (
+
+    return (
     <div className={style.nave}>
         <div className="container d-flex align-items-center justify-content-center" >
-            <div onClick={()=>logo(dispatch,"LOGO")}  className={'logo w-25'}><img  width={(element.logoWidth)+"%"} src={element.logo}/></div>
-            <div onClick={()=>menu(dispatch,"MENU")} className={'menu w-50'}><ul><li><Link to="/">Home</Link></li><li><Link to="/about">about</Link></li></ul></div>
-            <div onClick={()=>btns(dispatch,"BTNS")} className={'btns w-25'}><div><Link to="/connect">connect</Link></div></div>
+            <div onClick={()=>{dispatch(ctype({type:"logo"}))}}   className={'logo w-25'}><img className='d-block m-auto' width={(logoWidth)+"%"} src={img}/></div>
+            <div onClick={()=>{dispatch(ctype({type:"menu"}))}}  className={'menu w-50'}><ul>
+            {menIitems?.map((item)=>{
+      return <li><Link to={item.url}>{item.text}</Link></li>
+    })}
+              </ul></div>
+            <div onClick={()=>{dispatch(ctype({type:"btns"}))}} className={'btns w-25'}><div><Link to="/connect">connect</Link></div></div>
         </div>
         
         </div>

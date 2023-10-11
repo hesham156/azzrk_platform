@@ -1,53 +1,47 @@
-import { Slider } from '@mui/material'
+import { Button, Slider, styled } from '@mui/material'
 import React from 'react'
-import { useState } from 'react';
-import { logo } from '../../redux/actions/elementActions';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-const EditLogo = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [data, setData] = useState([]);
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { clogo, saveLocal } from '../../redux/elementSlice';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
-  const [imgWidth, setImgWidth] = useState(50);
-  const element = useSelector(state=>state)
+const EditLogo = ({save}) => {
+  const {img,logoWidth} = useSelector(state=>state.element.logo)
   const dispatch = useDispatch()
-  useEffect(()=>{
-     setData(JSON.parse(localStorage.getItem("state")))
-    logo(dispatch,"LOGO",selectedImage?URL.createObjectURL(selectedImage):data.logoimg,imgWidth)
-  },[selectedImage,imgWidth])
-  return (
-    <div className='container'>
-      {selectedImage && (
-      <div>
-        <br />
-        <button onClick={() => {    localStorage.setItem("state",JSON.stringify({logoimg:URL.createObjectURL(selectedImage),logoWidth:imgWidth,siteName:"Azzrk",siteDes:"Azzrk"}))
-}}>Remove</button>
-      </div>
-    )}
-
-    <br />
-    <br />
-    
-    <input
-      type="file"
-      name="myImage"
-      onChange={(event) => {
-        console.log(event.target.files[0]);
-        setSelectedImage(event.target.files[0]);
-      }}
-    />
-    <input type='number' max={99} min={1} maxLength={2} placeholder={imgWidth} value={imgWidth} onChange={(e)=>setImgWidth(e.target.value)}/>
-    <Slider  value={imgWidth} onChange={(e)=>{setImgWidth(e.target.value)}} aria-label="Default" valueLabelDisplay="auto" />
-    <img
-      alt="not found"
-      width={imgWidth+"%"}
-      src={selectedImage?URL.createObjectURL(selectedImage):element.logo}
-      className='logoImg'
-    />
-
-    
+  const [newImg,setImg] = useState(img)
+  const [imgWidth,setImgWidth] = useState(logoWidth)
+ useEffect(()=>{
+    dispatch(clogo({logo:newImg,logoWidth:imgWidth}))
+ },[imgWidth,newImg])
+ const VisuallyHiddenInput = styled('input')({
+  clip: 'rect(0 0 0 0)',
+  clipPath: 'inset(50%)',
+  height: 1,
+  overflow: 'hidden',
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  whiteSpace: 'nowrap',
+  width: 1,
+});
+ return(
+  <div className='editLogo w-100 '>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}> 
+              <h5>تعديل اللوجو</h5>
+              <Button onClick={()=>{ save()}} variant="contained">save</Button>
+          </div>
+          <div>
+          <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
+              <img width={imgWidth+"%"} src={newImg?newImg:""}/>
+            <VisuallyHiddenInput onChange={(e)=>{setImg(URL.createObjectURL(e.target.files[0]))}} type="file" />
+          </Button>
+          </div>
+          <div style={{paddingRight:"15px",paddingLeft: "15px"}}>
+          <Slider  onChange={(e)=>{setImgWidth(e.target.value)}} value={imgWidth} aria-label="Default" valueLabelDisplay="auto" /> 
+          </div>
   </div>
-  )
+ )
 }
 
 export default EditLogo

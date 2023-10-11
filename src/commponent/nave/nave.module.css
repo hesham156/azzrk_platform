@@ -9,3 +9,9 @@
 .nave ul li a {
     text-decoration: none;
 }
+.nave{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
