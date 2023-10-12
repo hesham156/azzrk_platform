@@ -46,7 +46,12 @@ ul{
     display: flex;
     justify-content: center;    
     padding-top: 15px;
-
+position: relative;
+}
+.edit>button{
+    position: absolute;
+    bottom: 15px;
+    width: 90%;
 }
 .edit >div{
     width: 100%;
@@ -96,6 +101,8 @@ span.MuiButton-startIcon.MuiButton-iconSizeMedium.css-1d6wzja-MuiButton-startIco
   transition: all .6s ease;
   margin-top: 10px;
   cursor: pointer;
+  justify-content: space-between;
+    
 }
 .menuItem:hover {
     box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;

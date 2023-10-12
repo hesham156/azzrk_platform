@@ -6,11 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clogo, saveLocal } from '../../redux/elementSlice';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
-const EditLogo = ({save}) => {
+const EditLogo = () => {
   const {img,logoWidth} = useSelector(state=>state.element.logo)
   const dispatch = useDispatch()
   const [newImg,setImg] = useState(img)
   const [imgWidth,setImgWidth] = useState(logoWidth)
+
  useEffect(()=>{
     dispatch(clogo({logo:newImg,logoWidth:imgWidth}))
  },[imgWidth,newImg])
@@ -29,7 +30,6 @@ const EditLogo = ({save}) => {
   <div className='editLogo w-100 '>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}> 
               <h5>تعديل اللوجو</h5>
-              <Button onClick={()=>{ save()}} variant="contained">save</Button>
           </div>
           <div>
           <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
@@ -45,3 +45,4 @@ const EditLogo = ({save}) => {
 }
 
 export default EditLogo
+// {/* <Button onClick={()=>{ save()}} variant="contained">save</Button> */}
