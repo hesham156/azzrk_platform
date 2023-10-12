@@ -24,6 +24,11 @@ const Nave = () => {
           }}
           className={"menu w-50"}
         >
+          <div
+          onClick={() => {
+            navegate("editmenu", { replace: true });
+          }}
+        ></div>
           <ul>
             {menIitems?.map((item, index) => {
               return (<div key={index}>
