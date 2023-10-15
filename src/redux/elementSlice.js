@@ -3,7 +3,6 @@ const data = JSON.parse(localStorage.getItem("state"));
 // localStorage.setItem('menu',JSON.stringify([{url:"sfsfddd",text:"sfsfsf"},{url:"sfsfsf",text:"ddsfsfd"}]))
 const menu = JSON.parse(localStorage.getItem("menu"));
 
-console.log(data);
 export const elementSlice = createSlice({
   name: "element",
   initialState: {

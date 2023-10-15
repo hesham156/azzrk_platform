@@ -13,6 +13,7 @@ const EditMenu = ({save}) => {
     <h5>تعديل المنيو</h5>
     <div style={{width:"100%"}}>
       <MenuItems menu={menIitems}/>
+      
       <select onChange={(e)=>{dispatch(addmenu({index:e.target.value}))}}>
         <option>sele</option>
         {menIitems.map((item,index)=>{
