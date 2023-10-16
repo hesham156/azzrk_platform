@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { clogo, ctype } from "../../redux/elementSlice";
 const Nave = () => {
-  const { img, logoWidth } = useSelector((state) => state.element.logo);
+  const { img, logoWidth,alt } = useSelector((state) => state.element.logo);
   const menIitems = useSelector((state) => state.element.menu.lnk);
   const navegate = useNavigate();
   return (
@@ -16,7 +16,7 @@ const Nave = () => {
           }}
           className={"logo w-25"}
         >
-          <img className="d-block m-auto" width={logoWidth + "%"} src={img} />
+          <img className="d-block m-auto" width={logoWidth + "%"} src={img} alt={alt} />
         </div>
         <div
           onClick={() => {

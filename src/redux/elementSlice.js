@@ -1,21 +1,26 @@
 import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
-const data = JSON.parse(localStorage.getItem("state"));
-// localStorage.setItem('menu',JSON.stringify([{url:"sfsfddd",text:"sfsfsf"},{url:"sfsfsf",text:"ddsfsfd"}]))
-const menu = JSON.parse(localStorage.getItem("menu"));
+import axios from "axios";
 
+const newMenu = (await axios.get("https://azzrk-api.onrender.com/menu")).data;
+const site = (await axios.get("https://azzrk-api.onrender.com/site")).data;
+
+console.log(newMenu);
 export const elementSlice = createSlice({
   name: "element",
   initialState: {
     global: {},
     logo: {
-      img: data?.logo,
-      logoWidth: data?.width,
+      img: site.logo,
+      logoWidth: site.width,
+      alt:site.name
     },
     menu: {
-      lnk: menu,
+      lnk: newMenu,
     },
     btns: {},
     type: "global",
+    loading:false,
+    error:false
   },
   reducers: {
     ctype: (state, action) => {
@@ -43,9 +48,14 @@ export const elementSlice = createSlice({
       state.menu.lnk[action.payload.index].active = false;
       localStorage.setItem("menu", JSON.stringify(current(state).menu.lnk));
     },
+    resetmenu:(state,action)=>{
+      state.menu.lnk= action.payload.menu
+    }
   },
 });
-console.log(data?.logo);
 export const { clogo, saveLocal, ctype, cmenu, rmenu, addmenu } =
   elementSlice.actions;
 export default elementSlice.reducer;
+// const data = JSON.parse(localStorage.getItem("state"));
+// // localStorage.setItem('menu',JSON.stringify([{url:"sfsfddd",text:"sfsfsf"},{url:"sfsfsf",text:"ddsfsfd"}]))
+// const menu = JSON.parse(localStorage.getItem("menu"));
